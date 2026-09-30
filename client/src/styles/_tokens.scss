@@ -1,0 +1,120 @@
+:root {
+  /* Color Palette - Light (Quiet Luxury Fintech) */
+  --color-bg: #fafaf8;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f4f4f0;
+  --color-surface-subtle: #f0f0ec;
+  --color-text: #0e1116;
+  --color-text-muted: #575d6a;
+  --color-text-subtle: #798293;
+  --color-border: #e4e5df;
+  --color-border-subtle: #efefea;
+
+  /* Brand Accent - Deep Indigo */
+  --color-accent: #3444eb;
+  --color-accent-hover: #2936c9;
+  --color-accent-active: #1f2a9e;
+  --color-accent-subtle: #eff1fd;
+  --color-accent-contrast: #ffffff;
+
+  /* Functional Status Colors */
+  --color-success: #0c7e55;
+  --color-success-bg: #edfaf3;
+  --color-success-border: #b7e8d2;
+  --color-danger: #c9203d;
+  --color-danger-bg: #fdf1f3;
+  --color-danger-border: #f7b5c1;
+  --color-warning: #b45309;
+  --color-warning-bg: #fffbeb;
+  --color-warning-border: #fde68a;
+
+  /* Focus Ring */
+  --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent);
+
+  /* Spacing Scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Typography */
+  --font-heading:
+    "Plus Jakarta Sans Variable", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Inter Variable", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+
+  /* Layered Shadows */
+  --shadow-sm: 0 1px 2px rgba(14, 17, 22, 0.04);
+  --shadow-md:
+    0 4px 12px -2px rgba(14, 17, 22, 0.06), 0 2px 4px -1px rgba(14, 17, 22, 0.03);
+  --shadow-lg:
+    0 12px 28px -6px rgba(14, 17, 22, 0.08), 0 4px 10px -2px rgba(14, 17, 22, 0.04);
+  --shadow-float:
+    0 20px 40px -10px rgba(14, 17, 22, 0.12), 0 1px 3px rgba(14, 17, 22, 0.05);
+
+  /* Motion & Easing */
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+
+  /* Z-indices */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-dropdown: 300;
+  --z-toast: 400;
+  --z-modal: 500;
+}
+
+[data-theme="dark"] {
+  /* Color Palette - Dark (Quiet Luxury Midnight) */
+  --color-bg: #0c0e12;
+  --color-surface: #14171e;
+  --color-surface-elevated: #1b202a;
+  --color-surface-subtle: #222734;
+  --color-text: #f5f7fa;
+  --color-text-muted: #a1a7b5;
+  --color-text-subtle: #737a8c;
+  --color-border: #262b38;
+  --color-border-subtle: #1c212d;
+
+  /* Brand Accent */
+  --color-accent: #5263ff;
+  --color-accent-hover: #6776ff;
+  --color-accent-active: #4050e6;
+  --color-accent-subtle: #1b203e;
+  --color-accent-contrast: #ffffff;
+
+  /* Functional Status Colors */
+  --color-success: #1bb379;
+  --color-success-bg: #0e241a;
+  --color-success-border: #154734;
+  --color-danger: #e8435c;
+  --color-danger-bg: #271217;
+  --color-danger-border: #521822;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #251b08;
+  --color-warning-border: #54390b;
+
+  /* Focus Ring */
+  --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent);
+
+  /* Layered Shadows (tinted dark) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px -2px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 14px 32px -6px rgba(0, 0, 0, 0.6), 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+  --shadow-float: 0 24px 48px -10px rgba(0, 0, 0, 0.75);
+}

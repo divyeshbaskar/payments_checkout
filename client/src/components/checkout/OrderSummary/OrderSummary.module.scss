@@ -1,0 +1,317 @@
+.summaryWrapper {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.mobileAccordionToggle {
+  display: none;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+
+  @media (max-width: 900px) {
+    display: flex;
+  }
+}
+
+.mobileToggleLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.mobileTotal {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+.summaryCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+
+  @media (max-width: 900px) {
+    display: none;
+
+    &.mobileOpen {
+      display: block;
+      margin-bottom: var(--space-6);
+    }
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-4);
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+}
+
+.itemCountBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: var(--space-1);
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px dashed var(--color-border-subtle);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.itemName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.itemQty {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.itemPrice {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.couponSection {
+  margin-bottom: var(--space-6);
+  padding: var(--space-4);
+  background-color: var(--color-surface-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.couponForm {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.couponInput {
+  flex: 1;
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+
+  &:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+}
+
+.couponFeedback {
+  margin-top: var(--space-2);
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.couponSuccess {
+  color: var(--color-success);
+}
+
+.couponError {
+  color: var(--color-danger);
+}
+
+.appliedTag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.appliedTagContent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.removeCouponBtn {
+  background: none;
+  border: none;
+  color: var(--color-success);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: rgba(12, 126, 85, 0.15);
+  }
+}
+
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: var(--space-4);
+  font-size: 0.875rem;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text-muted);
+}
+
+.freeShipping {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.discountLine {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.totalRow {
+  display: flex;
+  align-items: flex-baseline;
+  justify-content: space-between;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-2);
+}
+
+.totalLabel {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.totalAmountWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.totalAmount {
+  font-family: var(--font-heading);
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.taxNotice {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.trustFootnote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: var(--space-4);
+}
+
+.skeletonBar {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-subtle) 25%,
+    var(--color-surface-elevated) 50%,
+    var(--color-surface-subtle) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+  height: 20px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

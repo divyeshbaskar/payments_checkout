@@ -1,0 +1,131 @@
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.labelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.requiredStar {
+  color: var(--color-danger);
+  margin-left: 2px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input,
+.select {
+  width: 100%;
+  min-height: 46px; /* 46px comfortable touch target */
+  padding: 0 var(--space-4);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-fast) var(--ease-spring);
+  appearance: none;
+
+  &::placeholder {
+    color: var(--color-text-subtle);
+  }
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-text-subtle);
+  }
+
+  &:focus {
+    border-color: var(--color-accent);
+    box-shadow: var(--focus-ring);
+  }
+
+  &:disabled {
+    background-color: var(--color-surface-subtle);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+  }
+}
+
+.hasError {
+  border-color: var(--color-danger) !important;
+
+  &:focus {
+    box-shadow:
+      0 0 0 2px var(--color-bg),
+      0 0 0 4px var(--color-danger) !important;
+  }
+}
+
+.leftIcon {
+  position: absolute;
+  left: var(--space-3);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.rightElement {
+  position: absolute;
+  right: var(--space-3);
+  display: flex;
+  align-items: center;
+}
+
+.hasLeftIcon {
+  padding-left: calc(var(--space-3) + 24px + var(--space-2));
+}
+
+.hasRightElement {
+  padding-right: calc(var(--space-3) + 32px);
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--color-text-muted);
+    pointer-events: none;
+  }
+}
+
+.helperText {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.errorMessage {
+  font-size: 0.8125rem;
+  color: var(--color-danger);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

@@ -1,0 +1,32 @@
+.notFoundPage {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    max-width: 440px;
+  }
+}
+
+.errorCode {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-accent);
+  line-height: 1;
+}

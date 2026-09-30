@@ -1,0 +1,37 @@
+@media print {
+  /* Hide non-printable elements */
+  header,
+  footer,
+  aside,
+  nav,
+  button,
+  .skip-link,
+  .no-print {
+    display: none !important;
+  }
+
+  body,
+  html,
+  #root,
+  main {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+  }
+
+  /* Printable receipt container */
+  .printable-receipt {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}

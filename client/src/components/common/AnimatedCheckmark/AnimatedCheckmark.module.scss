@@ -1,0 +1,14 @@
+.checkmarkWrapper {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

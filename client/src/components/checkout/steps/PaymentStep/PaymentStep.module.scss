@@ -1,0 +1,181 @@
+.paymentStep {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.stepHeader {
+  margin-bottom: var(--space-2);
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    margin-top: 4px;
+  }
+}
+
+.reviewCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.reviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  &:not(:last-child) {
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+}
+
+.editBtn {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+
+  &:hover {
+    background-color: var(--color-accent-subtle);
+  }
+}
+
+.detailsContent {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+
+  strong {
+    color: var(--color-text);
+  }
+}
+
+.trustRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+
+  .trustText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      color: var(--color-text);
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.statusCard {
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    max-width: 440px;
+  }
+}
+
+.statusIconWrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verifyingState {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface);
+
+  .statusIconWrapper {
+    background-color: var(--color-accent-subtle);
+    color: var(--color-accent);
+  }
+}
+
+.cancelledState {
+  border-color: var(--color-border);
+
+  .statusIconWrapper {
+    background-color: var(--color-surface-subtle);
+    color: var(--color-text-muted);
+  }
+}
+
+.failedState {
+  border-color: var(--color-danger-border);
+
+  .statusIconWrapper {
+    background-color: var(--color-danger-bg);
+    color: var(--color-danger);
+  }
+}
+
+.statusActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.payButtonContainer {
+  margin-top: var(--space-4);
+}

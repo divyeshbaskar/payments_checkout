@@ -18,14 +18,25 @@ export const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: env.CLIENT_ORIGIN,
+    origin: (requestOrigin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, or same-origin)
+      if (!requestOrigin) return callback(null, true);
+      if (
+        requestOrigin === env.CLIENT_ORIGIN ||
+        requestOrigin.endsWith(".vercel.app") ||
+        process.env["NODE_ENV"] !== "production"
+      ) {
+        return callback(null, true);
+      }
+      return callback(null, env.CLIENT_ORIGIN);
+    },
     credentials: true,
   }),
 );
 
 // Stretch Webhook: RAW body parser mounted specifically for Razorpay Webhook route
 app.post(
-  "/api/webhooks/razorpay",
+  ["/api/webhooks/razorpay", "/webhooks/razorpay"],
   express.raw({ type: "application/json" }),
   razorpayWebhookHandler,
 );
@@ -34,7 +45,7 @@ app.post(
 app.use(express.json({ limit: "100kb" }));
 
 // Health check
-app.get("/api/health", (_req, res) => {
+app.get(["/api/health", "/health"], (_req, res) => {
   res.json({
     status: "ok",
     service: "meridian-backend",
@@ -43,25 +54,31 @@ app.get("/api/health", (_req, res) => {
 });
 
 // Catalog routes
-app.get("/api/products", getProductsHandler);
+app.get(["/api/products", "/products"], getProductsHandler);
 
 // Pricing and quote route
-app.post("/api/quote", createQuoteHandler);
+app.post(["/api/quote", "/quote"], createQuoteHandler);
 
 // Order creation with rate limiter
-app.post("/api/orders", orderRateLimiter, createOrderHandler);
+app.post(["/api/orders", "/orders"], orderRateLimiter, createOrderHandler);
 
 // Payment verification with rate limiter
-app.post("/api/payments/verify", verifyRateLimiter, verifyPaymentHandler);
+app.post(
+  ["/api/payments/verify", "/payments/verify"],
+  verifyRateLimiter,
+  verifyPaymentHandler,
+);
 
 // Order confirmation summary
-app.get("/api/orders/:id", getOrderHandler);
+app.get(["/api/orders/:id", "/orders/:id"], getOrderHandler);
 
 // Centralized error handler
 app.use(errorHandler);
 
-if (process.env["NODE_ENV"] !== "test") {
+if (process.env["NODE_ENV"] !== "test" && !process.env["VERCEL"]) {
   app.listen(env.PORT, () => {
     // Server running on configured port
   });
 }
+
+export default app;
